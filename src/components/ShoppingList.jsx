@@ -1,5 +1,6 @@
 import { materialList } from '../datas/materialList';
-import "../styles/ShoppingList.scss"
+import "../styles/ShoppingList.scss";
+import MaterialItem from './MaterialItem';
 
 function List() {
   const categories = materialList.reduce(
@@ -16,12 +17,15 @@ function List() {
         ))}
       </ul>
       <ul className="productslist">
-        {materialList.map((material) => (
-          <li className="productslist__item" key={ material.id }>
-              { material.name }
-              { material.isBestSale && <span> 🔥</span> }
-              { material.isSpecialOffer && <div className="item__sales">Sales</div> }
-          </li>
+      { materialList.map(({ id, cover, name, isBestSale, isSpecialOffer, note}) => (
+        <MaterialItem
+            id={id}
+			cover={cover}
+			name={name}
+			note={note}
+            isBestSale={isBestSale}
+            isSpecialOffer={isSpecialOffer}
+        />
         ))}
       </ul>
     </div>

@@ -1,0 +1,28 @@
+.item{
+    margin: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    text-transform: capitalize;
+    border: solid 2px black;
+    border-radius: 10px;
+    position: relative;
+    height: 220px;
+    width: 220px;
+
+    &__cover{
+        height: 145px;
+        width: 145px;
+        border-radius: 20px;
+    }
+    &__sales{
+        position: absolute;
+        right: 0px;
+        top: 10px;
+        font-weight: 500;
+        color: white;
+        padding: 5px 10px;
+        background-color: #31b572;
+    }
+}
