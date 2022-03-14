@@ -1,9 +1,11 @@
 import "../styles/Banner.css";
 
 function Banner() {
+  const title = 'Canisports';
     return (
-      <div className="canisports-banner">
-        <h1> Canisports </h1>{" "}
+      <div className="banner">
+        <img src='./assets/logo.png' alt='Canisports' className='banner__logo'/>
+        <h1 className='banner__title'>{title}</h1>
       </div>
     );
 }

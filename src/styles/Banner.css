@@ -1,6 +1,13 @@
-.canisports-banner {
+.banner {
     color: black;
     text-align: right;
     padding: 32px;
     border-bottom: solid 3px black;
+    &__logo{
+        height: 45px;
+	    width: 45px;
+    }
+    &__title{
+        padding-left: 32px;
+    }
 }
