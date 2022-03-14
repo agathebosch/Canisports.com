@@ -1,23 +1,31 @@
-const materialList = [
-    'x-back harness',
-    'padded collar',
-    'musher belt',
-    'polar martingale collar',
-    'tow line bungee',
-    'snow hook',
-    'mushing lines - rigging',
-    'snap',
-    'bungee line'
-]
+import { materialList } from '../datas/materialList';
+import "../styles/ShoppingList.scss"
 
 function List() {
-    return (
-        <ul>
-            {materialList.map((material, index) => (
-                <li key={`${material}-${index}`}>{ material }</li>
-            ))}
-        </ul>
-    );
+  const categories = materialList.reduce(
+    (acc, material) =>
+      acc.includes(material.category) ? acc : acc.concat(material.category),
+    []
+  );
+
+  return (
+    <div>
+      <ul>
+        {categories.map((cat) => (
+          <li key={ cat }>{ cat }</li>
+        ))}
+      </ul>
+      <ul className="productslist">
+        {materialList.map((material) => (
+          <li className="productslist__item" key={ material.id }>
+              { material.name }
+              { material.isBestSale && <span> 🔥</span> }
+              { material.isSpecialOffer && <div className="item__sales">Sales</div> }
+          </li>
+        ))}
+      </ul>
+    </div>
+  );
 }
 
 export default List;
